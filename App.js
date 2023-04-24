@@ -20,18 +20,19 @@ const imageH = imageW * 1.54;
 export default () => {
     return (
         <View style={{ flex: 1, backgroundColor: '#000' }}>
-            <StatusBar hidden />
+            <StatusBar hidden /> 
             <FlatList 
                 data={data}
                 horizontal
                 pagingEnabled
                 keyExtractor={(_, index) => index.toString()}
                 renderItem={({item}) => {
-                    return <View>
+                    return <View style={{width, justifyContent:'center', alignItems:'center'}}>
                          <Image source={{uri: item.toString()}} style={{
                             width: imageW,
                             height: imageH,
-                            resizeMode:'cover'
+                            resizeMode:'cover',
+                            borderRadius: 16
                          }}/>
                     </View>
                 }}    
